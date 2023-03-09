@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Question from './pages/Ask/Question';
 import Answer from './pages/Answer/Answer';
 import Header from './pages/Header/Header';
+import Footer from './pages/Footer/Footer';
 
 function App() {
   const [userData, setUserData] = useContext(UserContext);
@@ -62,14 +63,27 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login"
-           element={
-          <div>
-            <Header/>
-          <Login />
-          </div>
-        } />
+          <Route
+            path="/signup"
+            element={
+              <>
+                {" "}
+                <SignUp />
+                <Footer/>
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <div>
+                <Header />
+                <Login />
+                <Footer />
+                
+              </div>
+            }
+          />
           <Route path="/question" element={<Question />} />
           <Route path="/answer" element={<Answer />} />
           {/* <Route path="/question:id" element={<Answer postId = {id} />} /> */}
